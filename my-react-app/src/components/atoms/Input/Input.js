@@ -11,7 +11,7 @@ function Input() {
         <input
           type="text"
           value={email}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email..."
         />
       </label>
