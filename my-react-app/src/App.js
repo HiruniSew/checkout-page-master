@@ -1,5 +1,5 @@
 import "./App.css";
-import Input from "./components/atoms/Input/Inputnput";
+import Input from "./components/atoms/Input/Input";
 
 function App() {
   return (
