@@ -1,0 +1,17 @@
+/* MyButton.css */
+
+.button {
+  background-color: #e48100;
+  color: #fff;
+  height: 40px;
+  width: 130px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgb(173, 121, 78);
+}

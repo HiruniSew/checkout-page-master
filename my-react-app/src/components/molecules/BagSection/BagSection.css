@@ -1,0 +1,45 @@
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.image-container {
+  margin-top: 20px;
+}
+.image {
+  width: 140px;
+  height: 140px;
+  border-radius: 20px;
+}
+.topic {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #3d3d3df1;
+  margin-top: 20px;
+}
+.price {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 17px;
+  color: rgb(255, 145, 0);
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+.discount-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.dis-price {
+  font-family: monospace;
+  font-weight: bold;
+  color: #3d3d3df1;
+  font-size: 16px;
+  margin-top: 18px;
+  text-decoration: line-through;
+}

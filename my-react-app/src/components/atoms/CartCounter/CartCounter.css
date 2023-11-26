@@ -1,0 +1,41 @@
+/* CartCounter.css */
+
+.item-counter-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(104, 104, 104);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 150px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.ash-color-box {
+  background-color: #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px;
+}
+
+.counter-button {
+  padding: 3px 6px;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  background-color: #dfdcdc;
+  color: rgb(110, 110, 110);
+  border-radius: 5px;
+}
+
+.count-display {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+  padding: 8px 0;
+  border-left: #e7e7e7;
+  border-right: #e7e7e7;
+  font-weight: bold;
+}

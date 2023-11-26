@@ -1,0 +1,74 @@
+/* styles.css */
+.container {
+  width: 350px;
+  height: 500px;
+  background-color: #e7e7e7;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 20px;
+  position: relative;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-line {
+  border-top: 1px solid #b3b1b1;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.Shipping {
+  display: flex;
+  flex-direction: row;
+  gap: 220px;
+}
+
+.shipp-para {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #3d3d3df1;
+  margin-top: 13px;
+  margin-left: 10px;
+}
+
+.ship-price {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #3d3d3df1;
+  margin-top: 13px;
+  margin-right: 10px;
+}
+
+.horizontal-line2 {
+  border-top: 1px solid #b3b1b1;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Shipping2 {
+  display: flex;
+  flex-direction: row;
+  gap: 213px;
+}
+
+.shipp-para2 {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #3d3d3df1;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.ship-price2 {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18px;
+  color: #3d3d3df1;
+  margin-top: 10px;
+  margin-right: 10px;
+}
