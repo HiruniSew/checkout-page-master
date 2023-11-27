@@ -2,7 +2,7 @@ import "./BagSection.css"; // Import external styles
 import photo1 from "../../../assets/Images/photo1.png";
 import CartCounter from "../../atoms/CartCounter/CartCounter";
 
-function BagSection() {
+const BagSection = () => {
   return (
     <div>
       <div class="cart-container">
@@ -26,6 +26,6 @@ function BagSection() {
       <div class="img-container"></div>
     </div>
   );
-}
+};
 
 export default BagSection;

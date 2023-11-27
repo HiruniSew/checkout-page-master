@@ -75,17 +75,17 @@
 
 @media only screen and (max-width: 600px) {
   /* styles.css */
+  /* styles.css */
   .container {
-    width: 240px;
+    width: 280px;
     height: 400px;
     background-color: #e7e7e7;
     padding: 20px;
-    margin-top: 25px;
+    margin-top: 5px;
     border-radius: 20px;
-    position: relative;
-    margin-left: 150px;
     display: flex;
     flex-direction: column;
+    margin-left: 25px;
   }
 
   .horizontal-line {
@@ -97,7 +97,7 @@
   .Shipping {
     display: flex;
     flex-direction: row;
-    gap: 220px;
+    gap: 155px;
   }
 
   .shipp-para {
@@ -128,7 +128,7 @@
   .Shipping2 {
     display: flex;
     flex-direction: row;
-    gap: 213px;
+    gap: 150px;
   }
 
   .shipp-para2 {

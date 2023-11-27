@@ -28,9 +28,11 @@ const CheckoutPage = () => {
         {/* sub content 1 */}
         <div class="form-section">
           <div className="App">
-            <header className="App-header">
-              <h> Checkout </h>
-            </header>
+            <div class="header-main">
+              <header className="App-header">
+                <h> Checkout </h>
+              </header>
+            </div>
 
             <div class="cont-info">
               <h>Contact information</h>

@@ -2,7 +2,7 @@ import "./ShoeSection.css"; // Import external styles
 import photo2 from "../../../assets/Images/photo2.png";
 import CartCounter from "../../atoms/CartCounter/CartCounter";
 
-function ShoeSection() {
+const ShoeSection = () => {
   return (
     <div>
       <div class="cart-container">
@@ -26,6 +26,6 @@ function ShoeSection() {
       <div class="img-container"></div>
     </div>
   );
-}
+};
 
 export default ShoeSection;

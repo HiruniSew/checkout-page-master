@@ -3,7 +3,7 @@ import "./Cart.css"; // Import the external styles
 import BagSection from "../../molecules/BagSection/BagSection";
 import ShoeSection from "../../molecules/ShoeSection/ShoeSection";
 
-function Cart() {
+const Cart = () => {
   return (
     <div>
       <div className="container">
@@ -29,6 +29,6 @@ function Cart() {
       </div>
     </div>
   );
-}
+};
 
 export default Cart;

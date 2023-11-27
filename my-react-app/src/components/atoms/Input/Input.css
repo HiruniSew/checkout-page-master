@@ -17,7 +17,7 @@
 }
 
 .email-input {
-  width: 60%;
+  width: 100%;
   padding: 10px 30px 10px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -76,7 +76,7 @@
   }
 
   .email-input {
-    width: 45%;
+    width: 100%;
     padding: 10px 30px 10px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;

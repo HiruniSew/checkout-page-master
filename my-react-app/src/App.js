@@ -1,12 +1,12 @@
 import "./App.css";
 import CheckoutPage from "./pages/CheckoutPage";
 
-function App() {
+const App = () => {
   return (
     <div>
       <CheckoutPage />
     </div>
   );
-}
+};
 
 export default App;
