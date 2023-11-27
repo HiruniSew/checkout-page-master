@@ -3,7 +3,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
-    <div class>
+    <div>
       <CheckoutPage />
     </div>
   );

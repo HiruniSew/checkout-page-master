@@ -17,19 +17,15 @@ import Button from "../components/atoms/Button/Button";
 import CartCounter from "../components/atoms/CartCounter/CartCounter";
 import BagSection from "../components/molecules/BagSection/BagSection";
 import Cart from "../components/organisms/Cart/Cart";
-function CheckoutPage() {
-  // Array of country options
-  const countryOptions = [
-    "USA",
-    "Canada",
-    "UK",
-    "Australia",
-    "Germany",
-    "France",
-  ];
+
+const countryOptions = ["Your country", "Sri Lanka", "India", "Australia"];
+
+const CheckoutPage = () => {
   return (
     <div>
+      {/* main container */}
       <div class="main">
+        {/* sub content 1 */}
         <div class="form-section">
           <div className="App">
             <header className="App-header">
@@ -105,13 +101,13 @@ function CheckoutPage() {
             </div>
           </div>
         </div>
-
+        {/* sub content 2 */}
         <div class="payment-section">
           <Cart />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default CheckoutPage;

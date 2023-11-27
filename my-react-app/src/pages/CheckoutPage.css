@@ -1,16 +1,17 @@
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
+} */
 .main {
   display: flex;
   flex-direction: row;
-  position: absolute;
+  justify-content: space-evenly;
+  /* position: absolute; */
 }
 .form-section {
-  position: absolute;
-  margin-left: 180px;
+  /* position: absolute; */
+  /* margin-left: 180px; */
 }
 
 .App-header {
@@ -29,7 +30,7 @@
   color: rgb(0, 0, 0);
   margin-top: 30px;
   font-family: monospace;
-  width: 700px;
+  /* width: 700px; */
 }
 .ship-info {
   align-items: flex-start;
@@ -37,10 +38,11 @@
   color: rgb(0, 0, 0);
   margin-top: 30px;
   font-family: monospace;
-  width: 700px;
+  /* width: 700px; */
 }
 
 .ship-info-colmn {
+  width: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -50,7 +52,7 @@
 }
 
 .postal-form {
-  width: 262px;
+  /* width: 262px; */
 }
 
 /*confirm part*/
@@ -75,7 +77,7 @@
   font-size: 14px;
   color: rgb(0, 0, 0);
   width: 300px;
-  margin-right: 450px;
+  /* margin-right: 450px; */
 }
 .submission {
   margin-right: 40px;
@@ -85,6 +87,103 @@
   margin-top: 4px;
 }
 .payment-section {
-  margin-left: 630px;
+  /* margin-left: 630px; */
   margin-top: 100px;
+}
+
+/*mobile view*/
+@media only screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .main {
+    display: flex;
+    flex-direction: column-reverse;
+    /* position: absolute; */
+  }
+  .form-section {
+    /* position: absolute; */
+    /* margin-left: 20px; */
+  }
+
+  .App-header {
+    background-color: #ffffff;
+    align-items: flex-start;
+    font-size: 35px;
+    color: rgb(83, 83, 83);
+    margin-top: 50px;
+    font-family: monospace;
+    font-weight: bold;
+  }
+
+  .cont-info {
+    align-items: flex-start;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin-top: 30px;
+    font-family: monospace;
+    width: 580px;
+  }
+  .ship-info {
+    align-items: flex-start;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin-top: 30px;
+    font-family: monospace;
+    width: 580px;
+  }
+
+  .ship-info-colmn {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .country-form {
+    width: 162px;
+  }
+
+  .postal-form {
+    width: 162px;
+  }
+
+  /*confirm part*/
+
+  .confirm {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+  }
+
+  .checkbox {
+    margin-right: 10px;
+  }
+
+  .text-line {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    width: 300px;
+    margin-right: 450px;
+  }
+  .submission {
+    margin-right: 400px;
+    margin-top: 5px;
+  }
+  .confirmation {
+    margin-top: 4px;
+  }
+  .payment-section {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+  }
 }

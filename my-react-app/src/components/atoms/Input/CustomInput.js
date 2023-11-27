@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Input.css";
 
-const CustomInput = ({ label, placeholder, icon }) => {
+const CustomInput = ({ label, placeholder, icon, options }) => {
   const [value, setValue] = useState("");
   const [isValid, setIsValid] = useState(true);
   //validations
@@ -12,11 +12,12 @@ const CustomInput = ({ label, placeholder, icon }) => {
     "Full name": (value) => /^[A-Za-z\s]+$/.test(value),
     Address: (value) => /^[A-Za-z0-9\s]+$/.test(value),
     City: (value) => /^[A-Za-z\s]+$/.test(value),
-    "Postal Code": (value) => /^[0-9]+$/.test(value),
+    "Postal Code": (value) => /^\d+$/.test(value),
   };
-
   const handleChange = (e) => {
     const inputValue = e.target.value;
+    console.log("Input Value:", inputValue); // Log the input value
+    console.log("Label:", label); // Log the label
     setIsValid(validations[label] ? validations[label](inputValue) : true);
     setValue(inputValue);
   };
@@ -28,13 +29,30 @@ const CustomInput = ({ label, placeholder, icon }) => {
         <div className="email-input-wrapper">
           <FontAwesomeIcon icon={icon} className="email-icon" />
 
-          <input
-            type="text"
-            placeholder={placeholder}
-            value={value}
-            onChange={handleChange}
-            className={`email-input ${isValid ? "" : "invalid"}`}
-          />
+          {label === "Country" ? (
+            <select
+              value={value}
+              onChange={handleChange}
+              className={`email-input ${isValid ? "" : "invalid"}`}
+            >
+              <option value="" disabled>
+                Select your country...
+              </option>
+              {options.map((country) => (
+                <option key={country} value={country}>
+                  {country}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <input
+              type="text"
+              placeholder={placeholder}
+              value={value}
+              onChange={handleChange}
+              className={`email-input ${isValid ? "" : "invalid"}`}
+            />
+          )}
         </div>
       </div>
       {!isValid && <p className="error-message">Please enter a valid value.</p>}
