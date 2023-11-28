@@ -88,6 +88,18 @@
   margin-top: 95px;
 }
 
+/* Style for the error messages container */
+.error-messages {
+  margin-top: 10px;
+}
+
+/* Style for each individual error message */
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
 /*mobile view*/
 @media only screen and (max-width: 600px) {
   .main {
@@ -167,7 +179,7 @@
     color: rgb(0, 0, 0);
   }
   .submission {
-    margin-left: 210px;
+    margin-left: 200px;
   }
 
   .payment-section {

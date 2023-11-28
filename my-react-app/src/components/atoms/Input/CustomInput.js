@@ -5,7 +5,9 @@ import "./Input.css";
 const CustomInput = ({ label, placeholder, icon, options }) => {
   const [value, setValue] = useState("");
   const [isValid, setIsValid] = useState(true);
-  //validations
+  const [errorMessage, setErrorMessage] = useState(""); // Add errorMessage state
+
+  // Validations
   const validations = {
     "E-mail": (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
     Phone: (value) => /^\d+$/.test(value),
@@ -14,12 +16,18 @@ const CustomInput = ({ label, placeholder, icon, options }) => {
     City: (value) => /^[A-Za-z\s]+$/.test(value),
     "Postal Code": (value) => /^\d+$/.test(value),
   };
+
   const handleChange = (e) => {
     const inputValue = e.target.value;
-    console.log("Input Value:", inputValue); // Log the input value
-    console.log("Label:", label); // Log the label
     setIsValid(validations[label] ? validations[label](inputValue) : true);
     setValue(inputValue);
+
+    // Update errorMessage state
+    if (!isValid && inputValue !== "") {
+      setErrorMessage(`Invalid ${label}`);
+    } else {
+      setErrorMessage("");
+    }
   };
 
   return (

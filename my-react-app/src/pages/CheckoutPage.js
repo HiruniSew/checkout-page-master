@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 import {
   faAddressCard,
   faCake,
@@ -21,6 +22,57 @@ import Cart from "../components/organisms/Cart/Cart";
 const countryOptions = ["Your country", "Sri Lanka", "India", "Australia"];
 
 const CheckoutPage = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    phone: "",
+    fullName: "",
+    address: "",
+    city: "",
+    country: "",
+    postalCode: "",
+  });
+
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [errorMessages, setErrorMessages] = useState([]);
+
+  const handleInputChange = (name, value) => {
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = () => {
+    setIsFormSubmitted(true);
+
+    const newErrorMessages = [];
+
+    // Validate each field using the CustomInput validations
+    Object.keys(formData).forEach((key) => {
+      if (validations[key] && !validations[key](formData[key])) {
+        newErrorMessages.push(`Invalid ${key}`);
+      }
+    });
+
+    if (newErrorMessages.length === 0) {
+      // Form is valid, submit the form
+      alert("Form submitted successfully!");
+    } else {
+      // Form is not valid, display error messages
+      setErrorMessages(newErrorMessages);
+    }
+  };
+
+  const validations = {
+    email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    phone: (value) => /^\d+$/.test(value),
+    fullName: (value) => /^[A-Za-z\s]+$/.test(value),
+    address: (value) => /^[A-Za-z0-9\s]+$/.test(value),
+    city: (value) => /^[A-Za-z\s]+$/.test(value),
+    country: (value) => value !== "Your country",
+    postalCode: (value) => /^\d+$/.test(value),
+  };
+
   return (
     <div>
       {/* main container */}
@@ -98,7 +150,7 @@ const CheckoutPage = () => {
               </div>
 
               <div class="submission">
-                <Button />
+                <Button onClick={handleSubmit} errorMessages={errorMessages} />
               </div>
             </div>
           </div>
