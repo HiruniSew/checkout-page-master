@@ -99,6 +99,10 @@
   font-size: 14px;
   margin-bottom: 5px;
 }
+.email-input-container select.invalid,
+.email-input-container .invalid {
+  border-color: #ff0000; /* Red border for invalid input */
+}
 
 /*mobile view*/
 @media only screen and (max-width: 600px) {

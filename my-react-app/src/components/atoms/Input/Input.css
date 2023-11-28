@@ -51,7 +51,7 @@
   font-size: 12px;
 }
 
-.email-input-container select.invalid {
+.email-input-container .invalid {
   border-color: #ff0000; /* Red border for invalid input */
 }
 
@@ -110,7 +110,8 @@
     font-size: 12px;
   }
 
-  .email-input-container select.invalid {
+  .email-input-container select.invalid,
+  .email-input-container .invalid {
     border-color: #ff0000; /* Red border for invalid input */
   }
 }

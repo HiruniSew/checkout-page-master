@@ -2,18 +2,26 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Input.css";
 
-const CustomInput = ({ label, placeholder, icon, options }) => {
+const CustomInput = ({
+  label,
+  placeholder,
+  icon,
+  options,
+  onChange,
+  error,
+}) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
     setValue(e.target.value);
+    onChange(e.target.value);
   };
 
   return (
     <div>
       <label className="email-label">{label}</label>
       <div className="email-input-container">
-        <div className="email-input-wrapper">
+        <div className={`email-input-wrapper ${error ? "error" : ""}`}>
           <FontAwesomeIcon icon={icon} className="email-icon" />
 
           {label === "Country" ? (
@@ -41,6 +49,7 @@ const CustomInput = ({ label, placeholder, icon, options }) => {
             />
           )}
         </div>
+        {error && <p className="error-message">{error}</p>}
       </div>
     </div>
   );
