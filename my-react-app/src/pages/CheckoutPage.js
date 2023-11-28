@@ -32,9 +32,6 @@ const CheckoutPage = () => {
     postalCode: "",
   });
 
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [errorMessages, setErrorMessages] = useState([]);
-
   const handleInputChange = (name, value) => {
     setFormData({
       ...formData,
@@ -43,34 +40,8 @@ const CheckoutPage = () => {
   };
 
   const handleSubmit = () => {
-    setIsFormSubmitted(true);
-
-    const newErrorMessages = [];
-
-    // Validate each field using the CustomInput validations
-    Object.keys(formData).forEach((key) => {
-      if (validations[key] && !validations[key](formData[key])) {
-        newErrorMessages.push(`Invalid ${key}`);
-      }
-    });
-
-    if (newErrorMessages.length === 0) {
-      // Form is valid, submit the form
-      alert("Form submitted successfully!");
-    } else {
-      // Form is not valid, display error messages
-      setErrorMessages(newErrorMessages);
-    }
-  };
-
-  const validations = {
-    email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-    phone: (value) => /^\d+$/.test(value),
-    fullName: (value) => /^[A-Za-z\s]+$/.test(value),
-    address: (value) => /^[A-Za-z0-9\s]+$/.test(value),
-    city: (value) => /^[A-Za-z\s]+$/.test(value),
-    country: (value) => value !== "Your country",
-    postalCode: (value) => /^\d+$/.test(value),
+    // You can perform any action here without validation
+    console.log("Form submitted");
   };
 
   return (
@@ -88,16 +59,17 @@ const CheckoutPage = () => {
 
             <div class="cont-info">
               <h>Contact information</h>
-
               <CustomInput
                 label="E-mail"
                 placeholder="Enter your email..."
                 icon={faEnvelope}
+                onChange={(value) => handleInputChange("email", value)}
               />
               <CustomInput
                 label="Phone"
                 placeholder="Enter your phone"
                 icon={faPhone}
+                onChange={(value) => handleInputChange("phone", value)}
               />
             </div>
 
@@ -107,17 +79,20 @@ const CheckoutPage = () => {
                 label="Full name"
                 placeholder="Rodney Cotton"
                 icon={faUser}
+                onChange={(value) => handleInputChange("fullName", value)}
               />
               <CustomInput
                 label="Address"
                 placeholder="Your address..."
                 icon={faHome}
+                onChange={(value) => handleInputChange("Address", value)}
               />
 
               <CustomInput
                 label="City"
                 placeholder="Your city..."
                 icon={faCity}
+                onChange={(value) => handleInputChange("City", value)}
               />
             </div>
 
@@ -136,6 +111,7 @@ const CheckoutPage = () => {
                   label="Postel code"
                   placeholder="Your postal code..."
                   icon={faAddressCard}
+                  onChange={(value) => handleInputChange("postalCode", value)}
                 />
               </div>
             </div>
@@ -149,8 +125,8 @@ const CheckoutPage = () => {
                 <label className="checkbox-label"></label>
               </div>
 
-              <div class="submission">
-                <Button onClick={handleSubmit} errorMessages={errorMessages} />
+              <div className="submission">
+                <Button onClick={handleSubmit} />
               </div>
             </div>
           </div>
@@ -163,5 +139,4 @@ const CheckoutPage = () => {
     </div>
   );
 };
-
 export default CheckoutPage;

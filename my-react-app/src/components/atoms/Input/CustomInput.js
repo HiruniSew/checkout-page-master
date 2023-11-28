@@ -4,30 +4,9 @@ import "./Input.css";
 
 const CustomInput = ({ label, placeholder, icon, options }) => {
   const [value, setValue] = useState("");
-  const [isValid, setIsValid] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(""); // Add errorMessage state
-
-  // Validations
-  const validations = {
-    "E-mail": (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-    Phone: (value) => /^\d+$/.test(value),
-    "Full name": (value) => /^[A-Za-z\s]+$/.test(value),
-    Address: (value) => /^[A-Za-z0-9\s]+$/.test(value),
-    City: (value) => /^[A-Za-z\s]+$/.test(value),
-    "Postal Code": (value) => /^\d+$/.test(value),
-  };
 
   const handleChange = (e) => {
-    const inputValue = e.target.value;
-    setIsValid(validations[label] ? validations[label](inputValue) : true);
-    setValue(inputValue);
-
-    // Update errorMessage state
-    if (!isValid && inputValue !== "") {
-      setErrorMessage(`Invalid ${label}`);
-    } else {
-      setErrorMessage("");
-    }
+    setValue(e.target.value);
   };
 
   return (
@@ -41,7 +20,7 @@ const CustomInput = ({ label, placeholder, icon, options }) => {
             <select
               value={value}
               onChange={handleChange}
-              className={`email-input ${isValid ? "" : "invalid"}`}
+              className="email-input"
             >
               <option value="" disabled>
                 Select your country...
@@ -58,12 +37,11 @@ const CustomInput = ({ label, placeholder, icon, options }) => {
               placeholder={placeholder}
               value={value}
               onChange={handleChange}
-              className={`email-input ${isValid ? "" : "invalid"}`}
+              className="email-input"
             />
           )}
         </div>
       </div>
-      {!isValid && <p className="error-message">Please enter a valid value.</p>}
     </div>
   );
 };
