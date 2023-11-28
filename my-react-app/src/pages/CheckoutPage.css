@@ -1,14 +1,7 @@
-/* .App {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-} */
 .main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  /* position: absolute; */
 }
 .form-section {
   /* position: absolute; */
@@ -125,10 +118,6 @@
     margin-top: 20px;
   }
 
-  /* .header-main {
-    display: flex;
-  } */
-
   .cont-info {
     align-items: center;
     font-size: 18px;
@@ -140,9 +129,6 @@
     font-size: 18px;
     color: rgb(0, 0, 0);
     font-family: monospace;
-
-    /* margin-left: 30px;
-    margin-right: 10px; */
   }
 
   .ship-info-colmn {
